@@ -15,7 +15,7 @@
 <jsp:setProperty name="savebean" property="*"></jsp:setProperty>
 <%
     savebean.setUsername((String) session.getAttribute("username"));
-    savebean.setData(new Date(new java.util.Date().getTime()));
+    savebean.setData(new java.sql.Timestamp(new java.util.Date().getTime()));
     boolean b=savebean.savedatas();
     if(b){
         request.getRequestDispatcher("Welcome.jsp").forward(request,response);
